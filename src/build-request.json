@@ -1,0 +1,155 @@
+{
+  "kind": "build_request",
+  "title": "Add PDF story library with categories and admin upload functionality",
+  "projectName": "Islahi Kids Books",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-7",
+      "text": "Create a backend data model for PDF stories with fields: id, title, category (Islamic or Historical), language (Urdu), pdfUrl, description, uploadDate, and authorName",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-user-pdf-request"
+        ],
+        "quotes": [
+          "I enter Islahi pdf stories in urdu islamic, historical etc"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Backend stores PDF story metadata in a Map structure",
+        "Each story has a unique ID",
+        "Category field accepts 'Islamic' or 'Historical' values",
+        "Language field is set to 'Urdu'"
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Add backend methods to create, read, and list PDF stories with filtering by category",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-user-pdf-request"
+        ],
+        "quotes": [
+          "yes seperate"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Implement addStory() method to add new PDF stories",
+        "Implement getStory(id) method to retrieve a single story",
+        "Implement getStoriesByCategory(category) method to filter stories",
+        "Implement getAllStories() method to retrieve all stories"
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Create an admin page at /admin/upload-story with a form to upload PDF stories including fields for title, category selection (Islamic/Historical), description, author name, and PDF file upload",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-user-pdf-request"
+        ],
+        "quotes": [
+          "yes i will upload stories"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Admin page is accessible at /admin/upload-story route",
+        "Form includes text inputs for title, description, and author name",
+        "Form includes dropdown for category selection with Islamic and Historical options",
+        "Form includes file upload input that accepts PDF files only",
+        "Form submits data to backend and shows success/error feedback"
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "text": "Create a Stories Library page at /stories that displays PDF stories organized by category tabs (Islamic and Historical) with story cards showing title, author, description, and a 'Read' button",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-user-pdf-request"
+        ],
+        "quotes": [
+          "no visitor cant download pdf they are only read stories",
+          "yes seperate"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Stories page is accessible at /stories route",
+        "Page displays category tabs for Islamic and Historical stories",
+        "Each story card shows title, author, and description",
+        "Story cards have a 'Read' button that opens the PDF viewer",
+        "No download button is visible to visitors"
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "text": "Create a PDF reader page at /stories/:id that displays the selected PDF story in a read-only embedded viewer without download capability",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-user-pdf-request"
+        ],
+        "quotes": [
+          "no visitor cant download pdf they are only read stories"
+        ]
+      },
+      "acceptanceCriteria": [
+        "PDF reader page opens when clicking 'Read' on a story card",
+        "PDF is displayed in an embedded viewer",
+        "Download option is disabled or hidden",
+        "Page includes back navigation to the Stories Library"
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "text": "Add 'Stories' link to the main navigation menu that directs to the Stories Library page",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-user-pdf-request"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Navigation menu includes 'Stories' link",
+        "Link navigates to /stories route",
+        "Active state styling applies when on Stories pages"
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "text": "Update the contact form backend to store the email muhammadnouman88555@gmail.com as the recipient email in a configuration or constant",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-user-pdf-request"
+        ],
+        "quotes": [
+          "give email muhammadnouman88555@gmail.com"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Backend stores muhammadnouman88555@gmail.com as the contact recipient email",
+        "Contact form submissions continue to be stored in backend as before"
+      ]
+    }
+  ],
+  "constraints": [
+    "PDF files must be stored as static assets accessible via URL",
+    "PDF viewer must prevent downloading or saving files",
+    "Maintain existing child-friendly design theme with warm colors and playful typography",
+    "Do not modify existing books catalog functionality"
+  ],
+  "nonGoals": [
+    "Email notifications for contact form submissions",
+    "User authentication for viewing stories",
+    "PDF editing or annotation features",
+    "Multi-language support beyond Urdu",
+    "Story rating or commenting system"
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

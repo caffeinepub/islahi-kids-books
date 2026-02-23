@@ -1,2 +1,3 @@
-# islahi-kids-books
-Exported from Caffeine project: Islahi Kids Books
+## 
+
+To run app build and run docker image: `docker build -t app . docker run -it --network host app`

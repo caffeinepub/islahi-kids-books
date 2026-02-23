@@ -1,0 +1,147 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "A website for Islahi Kids Books with PDF story reading (Urdu Islamic and historical categories) and contact form",
+  "architectural_notes": [
+    "PDF stories are read-only in browser, no download functionality",
+    "Contact form submissions stored in backend without email notifications (email feature disabled)"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-create-a-homepage-that-introduces-islahi-kids-books-with-a-welcoming-hero-section-company-description-and-mission-statement-about-children-s-educational-literature",
+      "title": "Create a homepage that introduces Islahi Kids Books with a welcoming hero section, company description, and mission statement about children's educational literature",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-books-catalog-page-that-displays-available-children-s-books-with-cover-images-titles-authors-age-recommendations-and-brief-descriptions",
+      "title": "Create a books catalog page that displays available children's books with cover images, titles, authors, age recommendations, and brief descriptions",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-book-detail-page-that-shows-comprehensive-information-about-a-selected-book-including-full-description-author-bio-educational-themes-and-sample-pages-or-excerpts",
+      "title": "Create a book detail page that shows comprehensive information about a selected book including full description, author bio, educational themes, and sample pages or excerpts",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-contact-page-with-a-form-for-inquiries-about-books-orders-or-general-questions-storing-submissions-in-the-backend",
+      "title": "Create a contact page with a form for inquiries about books, orders, or general questions, storing submissions in the backend",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-navigation-menu-that-allows-users-to-access-all-main-sections-home-books-catalog-about-and-contact",
+      "title": "Implement a navigation menu that allows users to access all main sections: Home, Books Catalog, About, and Contact",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-creative-child-friendly-visual-design-with-warm-inviting-colors-playful-typography-and-illustrations-that-appeal-to-both-children-and-parents-while-maintaining-professionalism-for-an-educational-brand",
+      "title": "Apply a creative, child-friendly visual design with warm, inviting colors, playful typography, and illustrations that appeal to both children and parents while maintaining professionalism for an educational brand",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-an-admin-page-at-admin-upload-story-with-a-form-to-upload-pdf-stories-including-fields-for-title-category-selection-islamic-historical-description-author-name-and-pdf-file-upload",
+      "title": "Create an admin page at /admin/upload-story with a form to upload PDF stories including fields for title, category selection (Islamic/Historical), description, author name, and PDF file upload",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-stories-library-page-at-stories-that-displays-pdf-stories-organized-by-category-tabs-islamic-and-historical-with-story-cards-showing-title-author-description-and-a-read-button",
+      "title": "Create a Stories Library page at /stories that displays PDF stories organized by category tabs (Islamic and Historical) with story cards showing title, author, description, and a 'Read' button",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-pdf-reader-page-at-stories-id-that-displays-the-selected-pdf-story-in-a-read-only-embedded-viewer-without-download-capability",
+      "title": "Create a PDF reader page at /stories/:id that displays the selected PDF story in a read-only embedded viewer without download capability",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-stories-link-to-the-main-navigation-menu-that-directs-to-the-stories-library-page",
+      "title": "Add 'Stories' link to the main navigation menu that directs to the Stories Library page",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create a website for Islahi Kids Books",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Add PDF story library with separate categories for Urdu Islamic and historical stories (read-only, no download)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Add admin functionality to upload PDF stories",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Add contact form that stores submissions in backend (email: muhammadnouman88555@gmail.com)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Create a backend data model for PDF stories with fields: id, title, category (Islamic or Historical), language (Urdu), pdfUrl, description, uploadDate, and authorName",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Add backend methods to create, read, and list PDF stories with filtering by category",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Update the contact form backend to store the email muhammadnouman88555@gmail.com as the recipient email in a configuration or constant",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Islahi Kids Books",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

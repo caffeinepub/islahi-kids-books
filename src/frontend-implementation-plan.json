@@ -1,0 +1,116 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Add PDF Story Library with Categories and Admin Upload",
+  "requirements": [
+    {
+      "id": "REQ-9",
+      "summary": "Create admin page for uploading PDF stories with form fields for title, category, description, author, and PDF file",
+      "acceptanceCriteria": [
+        "Admin page is accessible at /admin/upload-story route",
+        "Form includes text inputs for title, description, and author name",
+        "Form includes dropdown for category selection with Islamic and Historical options",
+        "Form includes file upload input that accepts PDF files only",
+        "Form submits data to backend and shows success/error feedback"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/AdminUploadStory.tsx",
+          "operation": "create",
+          "description": "Create admin story upload page with form containing title input, category dropdown (Islamic/Historical), description textarea, author name input, and PDF file upload field. Use ExternalBlob.fromBytes() to handle PDF upload with progress tracking. Call backend addStory() method with form data. Guard page access using authorization component's isCallerAdmin check. Display success message on successful upload and error feedback on failure."
+        },
+        {
+          "path": "frontend/src/hooks/useUploadStory.ts",
+          "operation": "create",
+          "description": "Create React Query mutation hook for uploading stories. Accept title, category, description, authorName, and PDF file blob as parameters. Convert file to ExternalBlob using ExternalBlob.fromBytes() with upload progress tracking. Call actor.addStory() with the ExternalBlob and form data. Invalidate 'stories' query cache on success."
+        },
+        {
+          "path": "frontend/src/hooks/useIsAdmin.ts",
+          "operation": "create",
+          "description": "Create React Query hook that calls backend isCallerAdmin() method to check if current user has admin role. Return loading state and boolean result. Enable query only when actor is available and user is authenticated."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route configuration for /admin/upload-story that renders AdminUploadStory page component. Ensure route is registered in the router configuration alongside existing routes."
+        }
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "summary": "Create Stories Library page with category tabs displaying story cards with title, author, description, and Read button",
+      "acceptanceCriteria": [
+        "Stories page is accessible at /stories route",
+        "Page displays category tabs for Islamic and Historical stories",
+        "Each story card shows title, author, and description",
+        "Story cards have a 'Read' button that opens the PDF viewer",
+        "No download button is visible to visitors"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Stories.tsx",
+          "operation": "create",
+          "description": "Create Stories Library page with tab navigation for Islamic and Historical categories. Display filtered story cards based on active tab. Each card shows title, authorName, and description fields from Story type. Include 'Read' button that navigates to /stories/:id route. Fetch stories using useStoriesByCategory hook. Show loading skeletons and error states. Apply child-friendly design with warm colors matching existing theme."
+        },
+        {
+          "path": "frontend/src/components/StoryCard.tsx",
+          "operation": "create",
+          "description": "Create reusable story card component that displays story title, author name, and description. Include 'Read' button that links to /stories/:id using story ID. Use similar styling to BookCard component for visual consistency. Apply warm colors and playful typography from existing theme."
+        },
+        {
+          "path": "frontend/src/hooks/useStoriesByCategory.ts",
+          "operation": "create",
+          "description": "Create React Query hook that accepts category parameter (islamic or historical) and calls backend getStoriesByCategory() method. Return Story array with loading and error states. Enable caching with queryKey including category."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route configuration for /stories that renders Stories page component. Register route in the router alongside existing routes."
+        }
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "summary": "Create PDF reader page that displays selected story in embedded viewer without download capability",
+      "acceptanceCriteria": [
+        "PDF reader page opens when clicking 'Read' on a story card",
+        "PDF is displayed in an embedded viewer",
+        "Download option is disabled or hidden",
+        "Page includes back navigation to the Stories Library"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/StoryReader.tsx",
+          "operation": "create",
+          "description": "Create PDF reader page that fetches story by ID using route parameter. Display story title and author above the PDF viewer. Embed PDF using iframe with pdfBlob.getDirectURL() as source. Add sandbox and no-download attributes to iframe to prevent downloading. Include back button that navigates to /stories. Show loading state while fetching story and error state if story not found."
+        },
+        {
+          "path": "frontend/src/hooks/useStory.ts",
+          "operation": "create",
+          "description": "Create React Query hook that fetches single story by ID from route parameters. Call backend getStoryById() method. Return Story object with loading and error states. Handle case where story is not found."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route configuration for /stories/:id that renders StoryReader page component with dynamic ID parameter. Register route in the router configuration."
+        }
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "summary": "Add Stories navigation link to main menu that directs to Stories Library page",
+      "acceptanceCriteria": [
+        "Navigation menu includes 'Stories' link",
+        "Link navigates to /stories route",
+        "Active state styling applies when on Stories pages"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Navigation.tsx",
+          "operation": "modify",
+          "description": "Add 'Stories' link to navigation menu that routes to /stories. Place link after Books link and before Contact link in both desktop and mobile menus. Apply active state styling when current route is /stories or /stories/:id using existing active route highlighting logic."
+        }
+      ]
+    }
+  ]
+}

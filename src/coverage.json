@@ -1,0 +1,136 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-21T10:48:33.430Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 7,
+    "implemented": 4,
+    "items": [
+      {
+        "id": "REQ-10",
+        "summary": "Create a Stories Library page at /stories that displays PDF stories organized by category tabs (Islamic and Historical) with story cards showing title, author, description, and a 'Read' button",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/Stories.tsx",
+          "frontend/src/components/StoryCard.tsx",
+          "frontend/src/hooks/useStoriesByCategory.ts",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/Stories.tsx",
+          "frontend/src/components/StoryCard.tsx",
+          "frontend/src/hooks/useStoriesByCategory.ts",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-11",
+        "summary": "Create a PDF reader page at /stories/:id that displays the selected PDF story in a read-only embedded viewer without download capability",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/StoryReader.tsx",
+          "frontend/src/hooks/useStory.ts",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/StoryReader.tsx",
+          "frontend/src/hooks/useStory.ts",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-12",
+        "summary": "Add 'Stories' link to the main navigation menu that directs to the Stories Library page",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/Navigation.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/Navigation.tsx"
+        ]
+      },
+      {
+        "id": "REQ-13",
+        "summary": "Update the contact form backend to store the email muhammadnouman88555@gmail.com as the recipient email in a configuration or constant",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-7",
+        "summary": "Create a backend data model for PDF stories with fields: id, title, category (Islamic or Historical), language (Urdu), pdfUrl, description, uploadDate, and authorName",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-8",
+        "summary": "Add backend methods to create, read, and list PDF stories with filtering by category",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-9",
+        "summary": "Create an admin page at /admin/upload-story with a form to upload PDF stories including fields for title, category selection (Islamic/Historical), description, author name, and PDF file upload",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/AdminUploadStory.tsx",
+          "frontend/src/hooks/useUploadStory.ts",
+          "frontend/src/hooks/useIsAdmin.ts",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/AdminUploadStory.tsx",
+          "frontend/src/hooks/useUploadStory.ts",
+          "frontend/src/hooks/useIsAdmin.ts",
+          "frontend/src/App.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "backend/authorization/MixinAuthorization.mo",
+    "backend/authorization/access-control.mo",
+    "backend/blob-storage/Mixin.mo",
+    "backend/blob-storage/Storage.mo",
+    "backend/main.mo",
+    "backend/migration.mo",
+    "build-request.json",
+    "build-template/README.md",
+    "caffeine.lock.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/App.tsx",
+    "frontend/src/backend.d.ts",
+    "frontend/src/backend.ts",
+    "frontend/src/components/BookCard.tsx",
+    "frontend/src/components/Navigation.tsx",
+    "frontend/src/components/StoryCard.tsx",
+    "frontend/src/declarations/backend.did.d.ts",
+    "frontend/src/declarations/backend.did.js",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useBook.ts",
+    "frontend/src/hooks/useBooks.ts",
+    "frontend/src/hooks/useIsAdmin.ts",
+    "frontend/src/hooks/useStoriesByCategory.ts",
+    "frontend/src/hooks/useStory.ts",
+    "frontend/src/hooks/useUploadStory.ts",
+    "frontend/src/pages/AdminUploadStory.tsx",
+    "frontend/src/pages/BookDetail.tsx",
+    "frontend/src/pages/BooksCatalog.tsx",
+    "frontend/src/pages/Home.tsx",
+    "frontend/src/pages/Stories.tsx",
+    "frontend/src/pages/StoryReader.tsx",
+    "frontend/src/utils/urlParams.ts",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

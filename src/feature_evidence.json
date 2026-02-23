@@ -1,0 +1,93 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-an-admin-page-at-admin-upload-story-with-a-form-to-upload-pdf-stories-including-fields-for-title-category-selection-islamic-historical-description-author-name-and-pdf-file-upload",
+      "featureTitle": "Create an admin page at /admin/upload-story with a form to upload PDF stories including fields for title, category selection (Islamic/Historical), description, author name, and PDF file upload",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/hooks/useIsAdmin.ts",
+        "frontend/src/hooks/useUploadStory.ts",
+        "frontend/src/pages/AdminUploadStory.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0",
+        "blob-storage@4.0.0"
+      ],
+      "testIds": [
+        "REQ-9"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-stories-library-page-at-stories-that-displays-pdf-stories-organized-by-category-tabs-islamic-and-historical-with-story-cards-showing-title-author-description-and-a-read-button",
+      "featureTitle": "Create a Stories Library page at /stories that displays PDF stories organized by category tabs (Islamic and Historical) with story cards showing title, author, description, and a 'Read' button",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/StoryCard.tsx",
+        "frontend/src/hooks/useStoriesByCategory.ts",
+        "frontend/src/pages/Stories.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0",
+        "blob-storage@4.0.0"
+      ],
+      "testIds": [
+        "REQ-10"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-pdf-reader-page-at-stories-id-that-displays-the-selected-pdf-story-in-a-read-only-embedded-viewer-without-download-capability",
+      "featureTitle": "Create a PDF reader page at /stories/:id that displays the selected PDF story in a read-only embedded viewer without download capability",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/hooks/useStory.ts",
+        "frontend/src/pages/StoryReader.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0",
+        "blob-storage@4.0.0"
+      ],
+      "testIds": [
+        "REQ-11"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-stories-link-to-the-main-navigation-menu-that-directs-to-the-stories-library-page",
+      "featureTitle": "Add 'Stories' link to the main navigation menu that directs to the Stories Library page",
+      "files": [
+        "frontend/src/components/Navigation.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0",
+        "blob-storage@4.0.0"
+      ],
+      "testIds": [
+        "REQ-12"
+      ],
+      "confidence": "high"
+    }
+  ]
+}
